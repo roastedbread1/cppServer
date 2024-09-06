@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ddosService:
+    image: curlimages/curl
+    networks:
+      - testNetwork
+    deploy:
+      mode: replicated
+      replicas: 10
+    command: /bin/sh -c "while true; do curl -vk http://cpp-server:8080; sleep 5; done"
+
+networks:
+  testNetwork:
+    external: true
