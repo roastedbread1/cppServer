@@ -1,4 +1,4 @@
-#usage
+# usage
 docker pull curlimages/curl  
 docker build -t serverimage .  
 docker network create --driver overlay --attachable testNetwork  
